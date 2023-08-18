@@ -1,7 +1,7 @@
 <h1>Powershell File Integrity Monitor Script Walkthrough</h1>
 
 <h2>Description</h2>
-In this lab I show how to create a custom File Integrity Monitor in Powershell with Azure. The script reviews the contents of the Folder titled "Files" and compares the Hashes to determine the file inegrity. The script then informs the user if a file has been changed, deleted, or if a new file has been created.
+In this lab I show how to create a custom File Integrity Monitor in Powershell with Azure. The script reviews the contents of the Folder titled "Files" and compares the Hashes to determine the file inegrity. The script then informs the user if a file has been changed, deleted, or if a new file has been created. In the broader scope of Cyber security, this script focuses on the Integrity aspect of the CIA triad.
 <br/>
 
 
@@ -19,38 +19,38 @@ In this lab I show how to create a custom File Integrity Monitor in Powershell w
 
 <p align="center">
 
-Within the Azure Cloud Powershell Open Editor and Split screen Between Command Line (on the Bottom and Editor (Top):  <br/>
-<img src="" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
+Within the Azure Cloud Powershell Open Editor and Split screen Between the Command Line (Bottom in blue) and Editor (Top):  <br/>
+<img src="https://i.imgur.com/dql2gNf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+Make sure to create all of the files and folders within the same directory (in this case I have created a directory titled "FIM"). This also shows that I ran the FIM.ps1 script and it has successfully displayed the prompt for the user to start the File Integrity Monitor<br />
 <br />
 
-Download Windows 2019 Server: <br/>
-<img src="https://i.imgur.com/IJH3PFm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Here we describe the conditional statement that describes the options for the FIM and what to do based on our selection: <br/>
+<img src="https://i.imgur.com/KQWtgkM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-<br />
-
-Download Windows 2019 Server: <br/>
-<img src="https://i.imgur.com/IJH3PFm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+The first option, "Option A", collects a new baseline by calculating a hash value and assigns it to each file within the Files directory. It then creates a baseline.txt file to store this information. This particular statement also deletes a pre-existing baseline.txt file if it already exists.
 <br />
 <br />
 
-Configure Virtual Box with Windows10: <br/>
-<img src="https://i.imgur.com/NtnmZKD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+The second option, "Option B", monitors files from the saved Baseline and checks against the hash values to make sure the files have not been altered: <br/>
+<img src="https://i.imgur.com/uFNKimT_d.webp?maxwidth=1520&fidelity=grand" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
-Add Windows 2019 Server: <br/>
-<img src="https://i.imgur.com/qb2JZ54.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Here we see that the script alerts the user if a new file has been created, which can be confirmed by creating a new file and running the script: <br/>
+<img src="https://i.imgur.com/DgcHkSp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
-Assign Password to Default Administrator Account after Installing Windows10: <br/>
-<img src="https://i.imgur.com/st3u7kg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Here is a demonstration of the script alerting the user to a file being changed: <br/>
+<img src="https://i.imgur.com/GvtUjjM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
-Creating Users with <a href="https://github.com/joshmadakor1/AD_PS">Josh Madakor's PowerShell custom script</a>
-<img src="https://i.imgur.com/tOmVEhh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Finally we see an instance where a File has been deleted (this can also be tested by moving the file out of the directory): <br/>
+<img src="https://i.imgur.com/4lATC8Z.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+Side Note: It's important to consider the user's side, which is why each script alert is a different color (a new file is shown as green, a file being changed is yellow, and a deleted file alert is displayed in red with a gray background).
 <br />
 <br />
 
