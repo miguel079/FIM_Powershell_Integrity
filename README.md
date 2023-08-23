@@ -1,7 +1,7 @@
 <h1>Powershell File Integrity Monitor Script Walkthrough</h1>
 
 <h2>Description</h2>
-In this lab I show how to create a custom File Integrity Monitor in Powershell with Azure. The script reviews the contents of the Folder titled "Files" and compares the Hashes to determine the file inegrity. The script then informs the user if a file has been changed, deleted, or if a new file has been created. In the broader scope of Cyber security, this script focuses on the Integrity aspect of the CIA triad.
+In this lab I show how to create a custom File Integrity Monitor in Powershell with Azure. The script reviews the contents of the Folder titled "Files" and compares the Hashes to determine the file integrity. The script then informs the user if a file has been changed, deleted, or if a new file has been created. In the broader scope of Cyber security, this script focuses on the Integrity aspect of the CIA triad.
 <br/>
 
 
